@@ -138,6 +138,16 @@ public class LinkedList {
         }
     }
 
+    public int size() {
+        int count = 0;
+        Node curr = head;
+        while (curr != null) {
+            count++;
+            curr = curr.next;
+        }
+        return count;
+    }
+
     // Main method to test
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
@@ -149,7 +159,7 @@ public class LinkedList {
 
         list.addAtBeginning(25);
         list.addAtBeginning(30);
-        list.addAtEnd(1000000);
+        list.addAtEnd(10);
 
         list.traverse();
         list.printMiddle();
@@ -171,5 +181,7 @@ public class LinkedList {
 
         found = list.search(50);
         System.out.println("Found 50? " + found);
+
+        System.out.println("Size of list: " + list.size());
     }
 }
