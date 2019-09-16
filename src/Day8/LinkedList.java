@@ -122,6 +122,21 @@ public class LinkedList {
 
         System.out.println("Middle node value: " + slow.data);
     }
+    public boolean search(int target) {
+        if (head == null) {
+            System.out.println("The list is empty.");
+            return false;
+        } else {
+            Node curr = head;
+            while (curr != null) {
+                if (curr.data == target) {
+                    return true;  // Found the target
+                }
+                curr = curr.next;  // Move to next node
+            }
+            return false;  // Target not found
+        }
+    }
 
     // Main method to test
     public static void main(String[] args) {
@@ -150,5 +165,11 @@ public class LinkedList {
 
         list.deleteAtEnd();
         list.traverse();
+
+        boolean found = list.search(20);
+        System.out.println("Found 20? " + found);
+
+        found = list.search(50);
+        System.out.println("Found 50? " + found);
     }
 }
