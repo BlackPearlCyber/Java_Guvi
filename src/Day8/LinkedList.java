@@ -9,7 +9,7 @@ class Node {
         next = null;
     }
 }
-
+//
 public class LinkedList {
     Node head;
 
